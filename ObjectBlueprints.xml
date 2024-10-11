@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+    <object Name="Arendeth_Silver_Falcon" Inherits="BaseBird">
+    <part Name="Body" Anatomy="Arendeth_Silver_Null_Falcon_Body" />
+    <stat Name="Hitpoints" Value="27" />
+    <stat Name="Level" Value="3" />
+    <stat Name="AV" Value="3" />
+    <stat Name="DV" Value="2" />
+	<stat Name="Ego" sValue="18" />
+	<stat Name="MoveSpeed" Value="110" />
+	<stat Name="Strength" sValue="16" /> 
+	<stat Name="Agility" sValue="18" />
+	<stat Name="Toughness" sValue="16" />
+	<stat Name="Willpower" sValue="14" />
+	<stat Name="Intelligence" sValue="14" />
+    <stat Name="HeatResistance" Value="5" />
+    <stat Name="ColdResistance" Value="5" />
+    <stat Name="ElectricResistance" Value="5" />
+    <part Name="Render" DisplayName="&amp;CN&amp;Bi&amp;bl&amp;ca&amp;Cm the Silver Null-Falcon" RenderString="y" ColorString="&amp;y" />
+    <part Name="Corpse" CorpseChance="100" CorpseBlueprint="Arendeth_Silver_Null_Falcon_Corpse" />
+    <part Name="Fetches" SniffChance = "4" SniffMessageChance = "10" /> <!-- SniffChance = 7 SniffMessageChance = 33 -->
+    <part Name="RefractLight" Chance="10" />
+    <skill Name="Acrobatics" />
+    <skill Name="Acrobatics_SwiftReflexes" />
+    <skill Name="Tactics" />
+    <skill Name="Tactics_Charge" />
+    <skill Name="Tactics_Run" />
+    <skill Name="Tactics_Hurdle" />
+    <skill Name="CookingAndGathering_Harvestry" />
+    <skill Name="ShortBlades" />
+    <skill Name="ShortBlades_Expertise" />
+    <skill Name="Acrobatics_Dodge" />
+    <skill Name="Multiweapon_Proficiency" />
+    <skill Name="Multiweapon_Flurry" />
+    <skill Name="Multiweapon_Fighting" />
+
+    
+    <inventoryobject Blueprint="Arendeth_Silver_Null_Falcon_Tail_Armor" Number="1" />
+   <inventoryobject Blueprint="Arendeth_Silver_Null_Falcon_Beak" Number="1" />
+   <inventoryobject Blueprint="Arendeth_Silver_Null_Falcon_Claw" Number="2" />
+
+
+    <part Name="AISelfPreservation" Threshold="75" />
+    <mutation Name="HeightenedHearing" Level="1" />
+    <mutation Name="MentalMirror" Level="1" />
+    <mutation Name="Regeneration" Level="1" />
+    <mutation Name="Confusion" Level="2" />
+    <mutation Name="DarkVision" Level="15" />
+    <mutation Name="NightVision" Level="15" />
+    <tag Name="PrimaryLimbType" Value="Foot" />
+    <tag Name="Gender" Value="female" />
+    <tag Name="Role" Value="Skirmisher" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <part Name="Description" Short="A extremely rare mutated silver falcon with sharp reflective quilled feathers. Likes to scavange for items and store them in its large dimensional storage in its tail feathers. =pronouns.Possessive= tiny beak is hooked." />
+    <tag Name="Species" Value="falcon" />
+    <tag Name="Noclone" />
+    <tag Name="Pet"/>
+ <tag Name="NoXP" />
+    <tag Name="StartingPet"/>
+    <part Name="Pettable" />
+  </object>
+  
+  <object Name="Arendeth_Silver_Null_Falcon_Corpse" Inherits="Corpse">
+    <part Name="Render" DisplayName="{{y|silver null-falcon corpse}}" ColorString="&amp;m" />
+    <part Name="Description" Short="The remains of a rare dead silver null-falcon. Can be consumed to refresh cooldowns, inflict a long term confusion, and inflict a long term(160 turn) poison that does 2d2 damage." />
+    <part Name="RefreshCooldownsOnEat" />
+    <part Name="ConfuseOnEat" Strength = "4d12" Duration = "6d4" Level="5" />
+    <part Name="PoisonOnEat" Duration="160" Damage="2d2" Strength="20" />
+    <part Name="Physics" Weight="60" />
+    <part Name="Commerce" Value="1000" />
+  </object>
+  
+   <object Name="Arendeth_Silver_Null_Falcon_Beak" Inherits="NaturalWeapon">
+	<part Name="Render" DisplayName="&amp;rSilver Falcon Beak" />
+	<part Name="Physics" IsReal="false" Solid="false" Takeable="false" Organic="true" Weight="0" Category="Natural Weapon" Conductivity="0" FreezeTemperature="-99999" BrittleTemperature="-99999" FlameTemperature="99999" VaporTemperature="99999" />
+    <part Name="MeleeWeapon" MaxStrengthBonus="100" BaseDamage="1d2" Skill="ShortBlades" Stat="Agility" Slot="Face" Attributes="Bite"/> 
+    <part Name="DisarmOnHit" Chance="2" />
+    <part Name="Description" Short="The beak of the silver null-falcon can disarm per hit at 2% chance" />
+    <tag Name="NaturalGear" />
+    <part Name="NoBreak" />
+    <part Name="NoDamage" />
+    <part Name="Commerce" Value="0" />
+    <intproperty Name="Natural" Value="1" />
+    <tag Name="VisibleAsDefaultBehavior" />
+    <tag Name="NoSparkingQuest" />
+    <tag Name="ExcludeFromDynamicEncounters" />
+    <tag Name="ShowMeleeWeaponStats" Value="true" />
+    <part Name="TinkerItem" Bits="00" CanDisassemble="false" CanBuild="false" />
+    <tag Name="TinkerCategory" Value="melee weapons" />
+    <tag Name="MeleeWeapon" Value="1" />
+    <tag Name="Tier" Value="4" />
+    <tag Name="WeaponUnarmed" />
+    <tag Name="UndesirableWeapon" />
+    <removepart Name="TinkerItem" />
+    <tag Name="ShowAsPhysicalFeature" />
+  </object>
+  
+   <object Name="Arendeth_Silver_Null_Falcon_Claw" Inherits="NaturalWeapon">
+	<part Name="Render" DisplayName="&amp;rSilver Falcon Claw" />
+	<part Name="Physics" IsReal="false" Solid="false" Takeable="false" Organic="true" Weight="0" Category="Natural Weapon" Conductivity="0" FreezeTemperature="-99999" BrittleTemperature="-99999" FlameTemperature="99999" VaporTemperature="99999" />
+    <part Name="MeleeWeapon" MaxStrengthBonus="100" BaseDamage="1d3" Skill="ShortBlades" Stat="Agility" Slot="Foot" />
+    <part Name="BleedingOnHit" Amount="1d2" SaveTarget="20" Stack="true" />
+    <part Name="Description" Short="Causes bleeding at 1d1(save 20)" />
+    <tag Name="NaturalGear" />
+    <part Name="NoBreak" />
+    <part Name="NoDamage" />
+    <part Name="Commerce" Value="0" />
+    <intproperty Name="Natural" Value="1" />
+    <tag Name="VisibleAsDefaultBehavior" />
+    <tag Name="NoSparkingQuest" />
+    <tag Name="ExcludeFromDynamicEncounters" />
+    <tag Name="ShowMeleeWeaponStats" Value="true" />
+    <part Name="TinkerItem" Bits="00" CanDisassemble="false" CanBuild="false" />
+    <tag Name="TinkerCategory" Value="melee weapons" />
+    <tag Name="Tier" Value="4" />
+    <tag Name="MeleeWeapon" Value="1" />
+    <tag Name="WeaponUnarmed" />
+    <part Name="ModSharp"/>
+    <removepart Name="TinkerItem" />
+    <tag Name="ShowAsPhysicalFeature" />
+  </object>
+      
+    <object Name="Arendeth_Silver_Null_Falcon_Tail_Armor" Inherits="Item">
+    <part Name="Armor" AV="1" DV="1" CarryBonus="200" WornOn="Tail" />
+    <part Name="Render" DisplayName="Silver Null-Falcon Tail" RenderString="]" ColorString="&amp;w" DetailColor="w" />
+    <part Name="Description" Short="The extradimensional tail that a null-falcon uses to store the items it finds." />
+    <part Name="Physics" IsReal="false" Solid="false" Takeable="false" Organic="true" Weight="0" Conductivity="0" FreezeTemperature="-99999" BrittleTemperature="-99999" FlameTemperature="99999" VaporTemperature="99999" Category="Armor" />
+    <tag Name="NaturalGear" />
+    <part Name="NoBreak" />
+    <part Name="NoDamage" />
+    <part Name="Commerce" Value="0" />
+    <intproperty Name="Natural" Value="1" />
+    <tag Name="VisibleAsDefaultBehavior" />
+    <tag Name="NoSparkingQuest" />
+    <tag Name="ExcludeFromDynamicEncounters" />
+    <tag Name="Tier" Value="4" />
+    <tag Name="ShowAsPhysicalFeature" />
+    <tag Name="BaseObject" Value="*noinherit" />
+    </object>
+  
+ </objects>
